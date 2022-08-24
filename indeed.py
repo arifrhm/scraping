@@ -1,4 +1,5 @@
 from unittest import result
+from webbrowser import get
 import requests
 from bs4 import BeautifulSoup
 
@@ -53,25 +54,24 @@ def location_data(soup):
     # return(res)
 
 if __name__ == "__main__":
-
     job = "digital-marketing"
     Location = "Jakarta-Raya"
     #url = "https://id.indeed.com/lowongan-kerja?q="+job+"&l="+Location+"&vjk=5a2f8363e0aa34ed"
     url = "https://www.jobstreet.co.id/id/job-search/"+job+"-jobs-in-"+Location+"/"
+    print(getdata(url))
+    # soup = html_code(url)
 
-    soup = html_code(url)
+    # job_res = job_data(soup)
+    # com_res = company_data(soup)
+    # loc_res = location_data(soup)
 
-    job_res = job_data(soup)
-    com_res = company_data(soup)
-    loc_res = location_data(soup)
+    # temp = 0
+    # for i in range(1, len(job_res)):
+    #     j = temp
+    #     for j in range(temp, 2+temp):
+    #         print("Company Name : " + com_res[j])
+    #         print("Location : " +loc_res[j])
 
-    temp = 0
-    for i in range(1, len(job_res)):
-        j = temp
-        for j in range(temp, 2+temp):
-            print("Company Name : " + com_res[j])
-            print("Location : " +loc_res[j])
-
-        temp = j
-        print("Job : " + job_res[i])
-        print("-------------------------")
+    #     temp = j
+    #     print("Job : " + job_res[i])
+    #     print("-------------------------")
